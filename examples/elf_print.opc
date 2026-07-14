@@ -1,0 +1,48 @@
+; elf header
+7Fh 45h 4Ch 46h
+02h
+01h
+01h
+00h 00h 00h 00h 00h 00h 00h 00h 00h
+
+02h 00h
+3Eh 00h
+01h 00h 00h 00h
+78h 00h 40h 00h 00h 00h 00h 00h
+40h 00h 00h 00h 00h 00h 00h 00h
+00h 00h 00h 00h 00h 00h 00h 00h
+00h 00h 00h 00h
+40h 00h
+38h 00h
+01h 00h
+00h 00h
+00h 00h
+00h 00h
+
+
+; program header
+01h 00h 00h 00h
+07h 00h 00h 00h
+00h 00h 00h 00h 00h 00h 00h 00h
+00h 00h 40h 00h 00h 00h 00h 00h
+00h 00h 40h 00h 00h 00h 00h 00h
+B0h 00h 00h 00h 00h 00h 00h 00h
+B0h 00h 00h 00h 00h 00h 00h 00h
+00h 10h 00h 00h 00h 00h 00h 00h
+
+
+
+; write string to stdout using linux syscall
+48h C7h 11b 000b 000b 01h 00h 00h 00h
+48h C7h 11b 000b 111b 01h 00h 00h 00h
+48h C7h 11b 000b 110b A2h 00h 40h 00h
+48h C7h 11b 000b 010b 0Eh 00h 00h 00h
+0Fh 05h
+
+; exit syscall
+48h C7h 11b 000b 000b 3Ch 00h 00h 00h
+48h 31h 11b 111b 111b
+0Fh 05h
+
+; data: "Hello, World!\n"
+48h 65h 6Ch 6Ch 6Fh 2Ch 20h 57h 6Fh 72h 6Ch 64h 21h 0Ah

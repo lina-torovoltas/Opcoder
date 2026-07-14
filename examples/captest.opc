@@ -1,0 +1,18 @@
+; сode for testing register debugging.
+; loads sequential values into all general-purpose registers except r11.
+48h B8h 01h 00h 00h 00h 00h 00h 00h 00h
+48h BBh 02h 00h 00h 00h 00h 00h 00h 00h
+48h B9h 03h 00h 00h 00h 00h 00h 00h 00h
+48h BAh 04h 00h 00h 00h 00h 00h 00h 00h
+48h BEh 05h 00h 00h 00h 00h 00h 00h 00h
+48h BFh 06h 00h 00h 00h 00h 00h 00h 00h
+49h B8h 07h 00h 00h 00h 00h 00h 00h 00h
+49h B9h 08h 00h 00h 00h 00h 00h 00h 00h
+49h BAh 09h 00h 00h 00h 00h 00h 00h 00h
+49h BCh 0Ah 00h 00h 00h 00h 00h 00h 00h
+49h BDh 0Bh 00h 00h 00h 00h 00h 00h 00h
+49h BEh 0Ch 00h 00h 00h 00h 00h 00h 00h
+49h BFh 0Dh 00h 00h 00h 00h 00h 00h 00h
+
+; ret
+C3h

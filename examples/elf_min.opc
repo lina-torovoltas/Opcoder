@@ -1,0 +1,38 @@
+; elf header
+7Fh 45h 4Ch 46h
+02h
+01h
+01h
+00h 00h 00h 00h 00h 00h 00h 00h 00h
+
+02h 00h
+3Eh 00h
+01h 00h 00h 00h
+78h 00h 40h 00h 00h 00h 00h 00h
+40h 00h 00h 00h 00h 00h 00h 00h
+00h 00h 00h 00h 00h 00h 00h 00h
+00h 00h 00h 00h
+40h 00h
+38h 00h
+01h 00h
+00h 00h
+00h 00h
+00h 00h
+
+
+; program header
+01h 00h 00h 00h
+07h 00h 00h 00h
+00h 00h 00h 00h 00h 00h 00h 00h
+00h 00h 40h 00h 00h 00h 00h 00h
+00h 00h 40h 00h 00h 00h 00h 00h
+78h 00h 00h 00h 00h 00h 00h 00h
+78h 00h 00h 00h 00h 00h 00h 00h
+00h 00h 20h 00h 00h 00h 00h 00h
+
+
+
+; exit with code 42
+48h C7h 11b 000b 000b 3Ch 00h 00h 00h
+48h C7h 11b 000b 111b 2Ah 00h 00h 00h
+0Fh 05h

@@ -14,50 +14,33 @@ It provides JIT execution, binary extraction, and opcode disassembly.
 
 Opcoder accepts `.opc` files as input.
 
-Execute code directly in memory:
 ```bash
-opcoder input.opc -e
+$ ./opcoder input.opc -e              # execute in memory
+$ ./opcoder input.opc -d              # execute + dump register state
+$ ./opcoder input.opc -o output.bin   # save parsed bytecode as binary
+$ ./opcoder input.opc -a output.dasm  # disassembly with addresses/bytes
+$ ./opcoder input.opc -ao output.dasm # plain disassembly (mnemonics only)
 ```
 
-Execute code and display register state after execution:
+Options can be combined:
 ```bash
-opcoder input.opc -d
+$ ./opcoder print.opc -d -o print.bin -ao print.dasm
+# executes, dumps registers, saves binary, and generates plain disassembly
 ```
 
-Save parsed bytecode as a binary file:
-```bash
-opcoder input.opc -o output.bin
-```
 
-Generate disassembly with addresses and instruction bytes:
-```bash
-opcoder input.opc -a output.dasm
-```
+## Build dependencies
 
-Generate plain disassembly containing only assembly mnemonics:
-```bash
-opcoder input.opc -ao output.dasm
-```
-
-Options can be combined together<br/>
-For example:
-```bash
-opcoder print.opc -d -o print.bin -ao print.dasm
-```
-
-This command will execute the code, display register state after execution, save the binary output, and generate plain disassembly.
+- `make` utility for building
+- `gcc` or `tcc` compiler for Linux
+- `clang` and `mingw-w64` for Windows cross-compilation
 
 
 ## Building
 
-Ensure that `gcc`, `make`, and `capstone` are installed and available in your system PATH.</br>
-Clone the repository and build Opcoder using make:
-
-```bash
-git clone https://github.com/lina-torovoltas/Opcoder
-cd Opcoder
-make
-```
+1. Clone the repository and navigate to the project folder.
+2. Install the `capstone` library.
+3. Run `make` to build.
 
 
 ## Contributing

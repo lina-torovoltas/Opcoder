@@ -1,2 +1,2 @@
 *.h linguist-language=C
-*.opc linguist-language=WebAssembly linguist-detectable=true linguist-generated=false
+*.opc linguist-language=Assembly linguist-detectable=true linguist-generated=false
